@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Irusha Dinujaya - Network Engineering Undergraduate & Web Developer Portfolio. Showcasing networking, cybersecurity, and web development skills.">
+    <meta name="keywords" content="Irusha Dinujaya, Network Engineer, Web Developer, Portfolio, Cisco, HTML, CSS, JavaScript">
+    <meta name="author" content="Irusha Dinujaya">
+    <title>Irusha Dinujaya | Network Engineering & Web Development Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Initializing Network...</p>
+        </div>
+    </div>
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <span class="logo-text">Irusha<span class="logo-accent">.dev</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                <li><a href="#services" class="nav-link" data-section="services">Services</a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#certifications" class="nav-link" data-section="certifications">Certifications</a></li>
+                <li><a href="#tools" class="nav-link" data-section="tools">Tools</a></li>
+                <li><a href="#timeline" class="nav-link" data-section="timeline">Journey</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger" id="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Available for Opportunities</span>
+                </div>
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Irusha Dinujaya</span>
+                </h1>
+                <p class="hero-subtitle">
+                    <span class="typing-text" id="typingText"></span>
+                    <span class="cursor">|</span>
+                </p>
+                <p class="hero-description">
+                    A passionate Network Engineering undergraduate and aspiring Web Developer. I bridge the gap between network infrastructure and modern web technologies to create efficient, secure, and scalable digital solutions.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="#" class="btn btn-outline" onclick="alert('CV download coming soon!')">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:irusha@example.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="profile-container">
+                    <div class="profile-glass">
+                        <div class="profile-img">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <div class="profile-glow"></div>
+                    </div>
+                    <div class="orbit-ring ring-1"></div>
+                    <div class="orbit-ring ring-2"></div>
+                    <div class="orbit-ring ring-3"></div>
+                    <div class="floating-icon icon-1"><i class="fas fa-network-wired"></i></div>
+                    <div class="floating-icon icon-2"><i class="fas fa-code"></i></div>
+                    <div class="floating-icon icon-3"><i class="fas fa-shield-alt"></i></div>
+                    <div class="floating-icon icon-4"><i class="fas fa-server"></i></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about" class="scroll-btn">
+                <span class="scroll-mouse">
+                    <span class="scroll-wheel"></span>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">About Me</span>
+                <h2 class="section-title">Who I Am</h2>
+                <p class="section-subtitle">Passionate about building networks and web experiences</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-image reveal-left">
+                    <div class="about-img-card">
+                        <div class="about-img-inner">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="about-img-border"></div>
+                        <div class="about-img-glow"></div>
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <h3>Network Engineering Undergraduate & Web Developer</h3>
+                    <p>I am Irusha Dinujaya, a Network Engineering undergraduate passionate about networking technologies, cybersecurity, and modern web development. I enjoy building responsive web applications and designing efficient network infrastructures.</p>
+                    <p>My journey combines the best of both worlds — understanding how data flows through networks and creating beautiful interfaces that users love. I'm constantly learning new technologies to stay at the forefront of the industry.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="info-text">
+                                <span class="info-label">Education</span>
+                                <span class="info-value">Network Engineering Undergraduate</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info-text">
+                                <span class="info-label">Location</span>
+                                <span class="info-value">Sri Lanka</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info-text">
+                                <span class="info-label">Email</span>
+                                <span class="info-value">irusha@example.com</span>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon"><i class="fas fa-briefcase"></i></div>
+                            <div class="info-text">
+                                <span class="info-label">Status</span>
+                                <span class="info-value">Open to Opportunities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card reveal-up">
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card reveal-up">
+                    <div class="stat-icon"><i class="fas fa-code"></i></div>
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Technologies Learned</div>
+                </div>
+                <div class="stat-card reveal-up">
+                    <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="stat-number" data-count="4">0</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-card reveal-up">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Learning Hours</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">My Expertise</span>
+                <h2 class="section-title">Technical Skills</h2>
+                <p class="section-subtitle">Technologies and tools I work with</p>
+            </div>
+            <div class="skills-wrapper">
+                <div class="skills-category reveal-up">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3>Network Engineering</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">TCP/IP</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Routing & Switching</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">VLANs</span>
+                                <span class="skill-percent">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">OSPF</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Network Security</span>
+                                <span class="skill-percent">78%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="78"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Cisco Packet Tracer</span>
+                                <span class="skill-percent">92%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skills-category reveal-up">
+                    <div class="category-header">
+                        <div class="category-icon"><i class="fas fa-code"></i></div>
+                        <h3>Web Development</h3>
+                    </div>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">HTML5</span>
+                                <span class="skill-percent">95%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">CSS3</span>
+                                <span class="skill-percent">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percent">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Responsive Design</span>
+                                <span class="skill-percent">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-percent">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Git & GitHub</span>
+                                <span class="skill-percent">82%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-progress" data-width="82"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">What I Do</span>
+                <h2 class="section-title">My Services</h2>
+                <p class="section-subtitle">Professional services I offer</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>Network Design</h3>
+                    <p>Designing efficient network topologies with VLANs, routing protocols, and security policies for enterprise environments.</p>
+                    <div class="service-hover"></div>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-wrench"></i></div>
+                    <h3>Network Troubleshooting</h3>
+                    <p>Diagnosing and resolving network issues using packet analysis, protocol inspection, and systematic troubleshooting methods.</p>
+                    <div class="service-hover"></div>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Front-End Development</h3>
+                    <p>Building responsive, interactive, and visually stunning websites using modern HTML, CSS, and JavaScript technologies.</p>
+                    <div class="service-hover"></div>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Website Design</h3>
+                    <p>Creating modern, user-friendly website designs with attention to detail, accessibility, and performance optimization.</p>
+                    <div class="service-hover"></div>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Technical Documentation</h3>
+                    <p>Writing clear and comprehensive technical documentation for network configurations, APIs, and system architectures.</p>
+                    <div class="service-hover"></div>
+                </div>
+                <div class="service-card reveal-up">
+                    <div class="service-icon"><i class="fas fa-headset"></i></div>
+                    <h3>IT Support</h3>
+                    <p>Providing technical support and guidance for network infrastructure, hardware, and software-related issues.</p>
+                    <div class="service-hover"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Portfolio</span>
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Some of my recent work</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card reveal-up">
+                    <div class="project-image">
+                        <div class="project-img-placeholder"><i class="fas fa-user-circle"></i></div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>A modern, responsive portfolio website built with HTML, CSS, and JavaScript featuring animations and interactive elements.</p>
+                        <div class="project-tags">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up">
+                    <div class="project-image">
+                        <div class="project-img-placeholder"><i class="fas fa-project-diagram"></i></div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Network Topology Simulator</h3>
+                        <p>An interactive network topology visualization tool for designing and simulating network architectures.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span><span>Canvas</span><span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up">
+                    <div class="project-image">
+                        <div class="project-img-placeholder"><i class="fas fa-calculator"></i></div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Subnet Calculator</h3>
+                        <p>A web-based IPv4 subnet calculator with CIDR support, network address calculation, and host range display.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span><span>HTML/CSS</span><span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up">
+                    <div class="project-image">
+                        <div class="project-img-placeholder"><i class="fas fa-cubes"></i></div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cisco Packet Tracer Labs</h3>
+                        <p>Collection of advanced networking labs including VLANs, OSPF, ACLs, and wireless configurations.</p>
+                        <div class="project-tags">
+                            <span>Cisco</span><span>Packet Tracer</span><span>Networking</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up">
+                    <div class="project-image">
+                        <div class="project-img-placeholder"><i class="fas fa-store"></i></div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Responsive Business Website</h3>
+                        <p>A fully responsive business website with modern design, animations, and mobile-first approach.</p>
+                        <div class="project-tags">
+                            <span>HTML5</span><span>CSS3</span><span>Responsive</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card reveal-up">
+                    <div class="project-image">
+                        <div class="project-img-placeholder"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-overlay">
+                            <div class="project-actions">
+                                <a href="#" class="project-btn" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-btn" title="View Code"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Network Monitoring Dashboard</h3>
+                        <p>A dashboard for monitoring network traffic, device status, and performance metrics in real-time.</p>
+                        <div class="project-tags">
+                            <span>JavaScript</span><span>CSS</span><span>Data Viz</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Credentials</span>
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Professional certifications and achievements</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card reveal-up">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="cert-badge in-progress">In Progress</div>
+                    <h3>CCNA</h3>
+                    <p>Cisco Certified Network Associate</p>
+                    <div class="cert-progress-track">
+                        <div class="cert-progress-bar" style="width: 70%"></div>
+                    </div>
+                    <span class="cert-status">70% Complete</span>
+                </div>
+                <div class="cert-card reveal-up">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <div class="cert-badge completed">Completed</div>
+                    <h3>Networking Fundamentals</h3>
+                    <p>Core networking concepts and protocols</p>
+                    <div class="cert-progress-track">
+                        <div class="cert-progress-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="cert-status">100% Complete</span>
+                </div>
+                <div class="cert-card reveal-up">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon"><i class="fas fa-code"></i></div>
+                    <div class="cert-badge completed">Completed</div>
+                    <h3>Web Development Fundamentals</h3>
+                    <p>HTML, CSS, and JavaScript basics</p>
+                    <div class="cert-progress-track">
+                        <div class="cert-progress-bar" style="width: 100%"></div>
+                    </div>
+                    <span class="cert-status">100% Complete</span>
+                </div>
+                <div class="cert-card reveal-up">
+                    <div class="cert-glow"></div>
+                    <div class="cert-icon"><i class="fas fa-hourglass-half"></i></div>
+                    <div class="cert-badge upcoming">Upcoming</div>
+                    <h3>Future Certifications</h3>
+                    <p>CCNP, AWS Cloud, and more</p>
+                    <div class="cert-progress-track">
+                        <div class="cert-progress-bar" style="width: 0%"></div>
+                    </div>
+                    <span class="cert-status">Planned</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Network Tools Section -->
+    <section id="tools" class="tools section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Utilities</span>
+                <h2 class="section-title">Network Tools</h2>
+                <p class="section-subtitle">Interactive networking utilities</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card reveal-up">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+                        <h3>IPv4 Subnet Calculator</h3>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-input-group">
+                            <label for="subnetIp">IP Address</label>
+                            <input type="text" id="subnetIp" placeholder="192.168.1.0" value="192.168.1.0">
+                        </div>
+                        <div class="tool-input-group">
+                            <label for="subnetCidr">CIDR Prefix</label>
+                            <select id="subnetCidr">
+                                <option value="24">/24 (255.255.255.0)</option>
+                                <option value="25">/25 (255.255.255.128)</option>
+                                <option value="26">/26 (255.255.255.192)</option>
+                                <option value="27">/27 (255.255.255.224)</option>
+                                <option value="28">/28 (255.255.255.240)</option>
+                                <option value="29">/29 (255.255.255.248)</option>
+                                <option value="30">/30 (255.255.255.252)</option>
+                                <option value="16">/16 (255.255.0.0)</option>
+                                <option value="8">/8 (255.0.0.0)</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="calculateSubnet()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                        <div class="tool-results" id="subnetResults"></div>
+                    </div>
+                </div>
+                <div class="tool-card reveal-up">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-check-circle"></i></div>
+                        <h3>IP Address Validator</h3>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-input-group">
+                            <label for="validateIp">Enter IP Address</label>
+                            <input type="text" id="validateIp" placeholder="192.168.1.1">
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="validateIp()">
+                            <i class="fas fa-check"></i> Validate
+                        </button>
+                        <div class="tool-results" id="validateResults"></div>
+                    </div>
+                </div>
+                <div class="tool-card reveal-up">
+                    <div class="tool-header">
+                        <div class="tool-icon"><i class="fas fa-exchange-alt"></i></div>
+                        <h3>Binary Converter</h3>
+                    </div>
+                    <div class="tool-body">
+                        <div class="tool-input-group">
+                            <label for="binaryInput">Decimal Number</label>
+                            <input type="number" id="binaryInput" placeholder="Enter a number (e.g., 255)">
+                        </div>
+                        <button class="btn btn-primary btn-full" onclick="convertToBinary()">
+                            <i class="fas fa-sync-alt"></i> Convert
+                        </button>
+                        <div class="tool-results" id="binaryResults"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">My Journey</span>
+                <h2 class="section-title">Experience & Education</h2>
+                <p class="section-subtitle">My academic and professional path</p>
+            </div>
+            <div class="timeline-wrapper">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018 - 2021</span>
+                        <h3>School Education</h3>
+                        <p>Completed secondary education with a focus on Mathematics and Information Technology, building a strong foundation for technical studies.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2022 - Present</span>
+                        <h3>University Journey</h3>
+                        <p>Pursuing a degree in Network Engineering, studying advanced networking concepts, protocols, and security practices.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3>Networking Specialization</h3>
+                        <p>Deep dive into Cisco technologies, routing protocols, network security, and infrastructure design through hands-on labs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2023 - Present</span>
+                        <h3>Web Development Learning Path</h3>
+                        <p>Self-taught web development through online courses and projects, mastering HTML, CSS, JavaScript, and responsive design.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Future</span>
+                        <h3>Career Goals</h3>
+                        <p>Aspiring to become a Network Architect and Full-Stack Developer, combining networking expertise with modern web technologies.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <div class="section-header reveal-up">
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title">Contact Me</h2>
+                <p class="section-subtitle">Let's discuss your next project</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <h3>Let's Work Together</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                    <div class="contact-cards">
+                        <div class="contact-card-item">
+                            <div class="contact-card-icon"><i class="fas fa-envelope"></i></div>
+                            <div class="contact-card-text">
+                                <span>Email</span>
+                                <a href="mailto:irusha@example.com">irusha@example.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-card-item">
+                            <div class="contact-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="contact-card-text">
+                                <span>Location</span>
+                                <span>Sri Lanka</span>
+                            </div>
+                        </div>
+                        <div class="contact-card-item">
+                            <div class="contact-card-icon"><i class="fas fa-clock"></i></div>
+                            <div class="contact-card-text">
+                                <span>Availability</span>
+                                <span>Mon - Fri, 9AM - 6PM</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-socials">
+                        <a href="https://github.com" target="_blank" class="contact-social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="contact-social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:irusha@example.com" class="contact-social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="#" class="contact-social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper reveal-right">
+                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name</label>
+                                <input type="text" id="contactName" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email</label>
+                                <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="subject" placeholder="Project Inquiry" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo">
+                        <i class="fas fa-network-wired"></i>
+                        <span>Irusha<span class="footer-accent">.dev</span></span>
+                    </a>
+                    <p>Network Engineering Undergraduate & Web Developer. Building the future of connectivity, one line of code at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <a href="#services">Network Design</a>
+                    <a href="#services">Web Development</a>
+                    <a href="#services">IT Support</a>
+                    <a href="#tools">Network Tools</a>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="footer-social-links">
+                        <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="mailto:irusha@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Irusha Dinujaya. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" class="back-to-top" id="backToTop" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
